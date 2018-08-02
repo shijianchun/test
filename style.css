@@ -230,6 +230,10 @@ button:-moz-focusring,
     -moz-appearance: none;
     -webkit-appearance: none;
 }
+.form select {
+    background: url('img/arrow_down.png') no-repeat right ;
+    background-size:10%;
+}
 .form label {
     border: 1px solid transparent;
     cursor: pointer;
