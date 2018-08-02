@@ -1,1 +1,172 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta name="screen-orientation" content="portrait" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+	<title> 商标推荐</title>
+	<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<div class="wrap l-app">	
+		<div class="header">	
+			<div class="title">给产品想个商标名称真麻烦，<br>你不知道的捷径在这里！</div>
+			<img src="img/banner.png" alt="">
+		</div>
+		<div class="form">
+			<div>
+				<div class="title">帮我推荐一款合适的商标</div>
+				<div class="sub-title">已成功帮助<span>8888</span>购买到了心仪的商标</div>
+			</div>
+			<form>
+				 <div class="flex-container">
+				    <label class="flex-ac text-right">商标类别:</label>
+				    <div class="flex-it1">
+				      <select>
+				        <option disabled selected value> 请选择商标类别 </option>
+						<option value="1">金融</option>
+						<option value="2">It</option>
+						<option value="3">土木</option>
+				      </select>
+				    </div>
+				</div>
+				<div class="flex-container">
+					<label class="flex-ac text-right" for="multiple-inputs-name">手机号码:</label>
+					<div class="flex-it1"><input type="text" id="multiple-inputs-name" placeholder="请输入您的手机号码"/></div>
+				</div>
+				<div class="flex-center">
+					<div>
+						<button type="button" class="btn btn-danger bg">立即推荐给我</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="process bg">
+			<div class="title">交易商标的流程</div>
+			<div class="flex-container">
+				<div class="part item">
+					<div class="number">01</div>
+					<div class="content">
+						<div class="title">提出买标需求</div>
+						<div class="ctt">专业顾问30分钟内联系你，确认需求即刻出发为您寻标</div>
+					</div>
+				</div>
+				<div class="item-0 arrow" style="width:100px;margin-top: 40px;"><img src="img/arrow.png" alt=""></div>
+				<div class="part item">
+					<div class="number">02</div>
+					<div class="content">
+						<div class="title">确认商标</div>
+						<div class="ctt">我推荐优质商标供您挑选，必有一款适合您</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="flex-end-start">
+				<div class="arrow route90" style="width: 45%;text-align: center;margin-top: 20px;"><img src="img/arrow.png" alt=""></div>
+			</div>
+			<div class="flex-container">
+				<div class="part item">
+					<div class="number">04</div>
+					<div class="content">
+						<div class="title">代办转让</div>
+						<div class="ctt">转让手续我们帮您办，下发通知书即刻寄到您手中</div>
+					</div>
+				</div>
+				<div class="item-0 arrow route180" style="width:100px;margin-top: 40px;"><img src="img/arrow.png" alt=""></div>
+				<div class="part item">
+					<div class="number">03</div>
+					<div class="content">
+						<div class="title">付款购买</div>
+						<div class="ctt">确认付款后，签署独占协议，第一时间让您用上标</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="advantage">
+			<div class="title">众品森的优势</div>
+			<div class="flex-container">
+				<div class="item">
+					<div class="circle">性价比</div>
+					<div>
+						海量商标快速推荐
+					</div>
+				</div>
+				<div class="item">
+					<div class="circle">商标多</div>
+					<div>
+						众品森拥有80万闲置商标
+					</div>
+				</div>
+				<div class="item">
+					<div class="circle">服务好</div>
+					<div>
+						一对一专业咨询<br>24小时极速推荐
+					</div>
+				</div>
+				<div class="item">
+					<div class="circle">售后全</div>
+					<div>
+						强大售后团队<br>全流程跟踪把控
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form">
+			<div>
+				<div class="title">联系专属顾问&nbsp;免费帮您找标</div>
+			</div>
+			<form>
+				<div class="flex-container">
+					<label class="flex-ac text-right" for="multiple-inputs-name">商标需求:</label>
+					<div class="flex-it1"><input type="text" id="multiple-inputs-name" placeholder="请输入商标名称"/></div>
+				</div>
+				<div class="flex-container">
+					<label class="flex-ac text-right" for="multiple-inputs-name">手机号码:</label>
+					<div class="flex-it1"><input type="text" id="multiple-inputs-name" placeholder="请输入联系方式"/></div>
+				</div>
+				<div class="flex-center">
+					<div>
+						<button type="button" class="btn btn-danger bg js-text" >帮我找标</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="Modal Modal--default Modal--alert is-in">
+	    <div class="Modal__body">
+	        <div class="Modal__content">
+	            提交成功
+	        </div>
+	        <footer class="Modal__footer">
+	            <a role="button" class="Modal__btn js-confirm" onclick="page.cancle()">确认</a>
+	        </footer>
+	    </div>
+	</div>
+	<script src="zepto.js"></script>
+	<script src="fastclick.js"></script>
+	<script type="text/javascript">
+	 $('button').on('click',function(argument) {
+	 	page.modalShow();
+	 })
+	 var page = {
+	 	modalShow:function () {
+	 		$('.Modal--alert').css('display','flex');
+		 	$('.backdrop').css('opcity','1')
+		 	$('body').addClass('is-alert-open')
+		 	$('	<div class="backdrop" ></div>').insertBefore('.Modal--alert')
+	 	},
+	 	cancle:function (argument) {
+	 		$('.Modal--alert').css('display','none');
+			$('.backdrop').css('opcity','0')
+		 	$('body').removeClass('is-alert-open')
+		 	$('.backdrop').remove();	 		
+	 	}
+	 }
+	</script>
+</body>
+</html>
