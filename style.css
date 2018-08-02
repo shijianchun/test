@@ -208,6 +208,7 @@ button:-moz-focusring,
 .form [type=text],
 .form select,
 .form textarea {
+    appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
     background-color: #fff;
@@ -225,6 +226,7 @@ button:-moz-focusring,
 .form [type=text],
 .form select,
 .form textarea {
+    appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
 }
