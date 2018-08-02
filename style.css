@@ -208,7 +208,8 @@ button:-moz-focusring,
 .form [type=text],
 .form select,
 .form textarea {
-    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
     background-color: #fff;
     border-radius: 5px;
     display: block;
@@ -222,6 +223,7 @@ button:-moz-focusring,
 .form [type=number],
 .form [type=tel],
 .form [type=text],
+.form select,
 .form textarea {
     -moz-appearance: none;
     -webkit-appearance: none;
