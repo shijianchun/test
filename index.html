@@ -18,16 +18,16 @@
 			<div class="title">给产品想个商标名称真麻烦，<br>你不知道的捷径在这里！</div>
 			<img src="img/banner.png" alt="">
 		</div>
-		<div class="form">
+		<div class="form" >
 			<div>
 				<div class="title">帮我推荐一款合适的商标</div>
 				<div class="sub-title">已成功帮助<span>8888</span>购买到了心仪的商标</div>
 			</div>
-			<form>
+			<form id="form1">
 				 <div class="flex-container">
 				    <label class="flex-ac text-right">商标类别:</label>
 				    <div class="flex-it1">
-				      <select>
+				      <select id="mark">
 				        <option disabled selected value> 请选择商标类别 </option>
 						<option value="1">金融</option>
 						<option value="2">It</option>
@@ -36,12 +36,13 @@
 				    </div>
 				</div>
 				<div class="flex-container">
-					<label class="flex-ac text-right" for="multiple-inputs-name">手机号码:</label>
-					<div class="flex-it1"><input type="text" id="multiple-inputs-name" placeholder="请输入您的手机号码"/></div>
+					<label class="flex-ac text-right" for="phone">手机号码:</label>
+					<div class="flex-it1"><input type="text" id="phone" placeholder="请输入您的手机号码"/></div>
 				</div>
+				<div class="err"><span>*请输入正确的手机号</span></div>
 				<div class="flex-center">
 					<div>
-						<button type="button" class="btn btn-danger bg">立即推荐给我</button>
+						<button type="button" class="btn btn-danger bg" id="rcommend">立即推荐给我</button>
 					</div>
 				</div>
 			</form>
@@ -116,27 +117,29 @@
 				</div>
 			</div>
 		</div>
-		<div class="form">
+		<div class="form" >
 			<div>
 				<div class="title">联系专属顾问&nbsp;免费帮您找标</div>
 			</div>
-			<form>
+			<form id="form2">
 				<div class="flex-container">
-					<label class="flex-ac text-right" for="multiple-inputs-name">商标需求:</label>
-					<div class="flex-it1"><input type="text" id="multiple-inputs-name" placeholder="请输入商标名称"/></div>
+					<label class="flex-ac text-right" for="need">商标需求:</label>
+					<div class="flex-it1"><input type="text" id="neeed" placeholder="请输入商标名称"/></div>
 				</div>
 				<div class="flex-container">
-					<label class="flex-ac text-right" for="multiple-inputs-name">手机号码:</label>
-					<div class="flex-it1"><input type="text" id="multiple-inputs-name" placeholder="请输入联系方式"/></div>
+					<label class="flex-ac text-right" for="link">手机号码:</label>
+					<div class="flex-it1"><input type="text" id="link" placeholder="请输入联系方式"/></div>
 				</div>
+				<div class="err"><span>*请输入正确的手机号</span></div>
 				<div class="flex-center">
 					<div>
-						<button type="button" class="btn btn-danger bg js-text" >帮我找标</button>
+						<button type="button" class="btn btn-danger bg js-text" id="subTrademark" >帮我找标</button>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
+	<div class="footer">版权所有©四川众品森知识产权代理有限责任公司</div>
 	<div class="Modal Modal--default Modal--alert is-in">
 	    <div class="Modal__body">
 	        <div class="Modal__content">
@@ -150,22 +153,62 @@
 	<script src="zepto.js"></script>
 	<script src="fastclick.js"></script>
 	<script type="text/javascript">
-	 $('button').on('click',function(argument) {
-	 	page.modalShow();
+	 $('#rcommend').on('click',function(argument) {
+	    var phone = $.trim($('#phone').val());
+	     if (!page.phoneReg.test(phone)) {
+		   //page.modalShow("请输入正确的手机号");
+		   $("#form1 .err").show();
+		   $("#phone").focus();
+		   return false;
+        }
+	 	page.modalShow("您的资料已提交<br>众品森知识产权顾问稍后联系您");
+	 	document.getElementById("form1").reset();
+	 	$("#form1 .err").hide();
 	 })
+	 $('#subTrademark').on('click',function(argument) {
+	    //电话
+	    var link = $.trim($('#link').val());
+	     if (!page.phoneReg.test(link)) {
+		   //page.modalShow("请输入正确的手机号");
+		   $("#form2 .err").show();
+		   $("#link").focus();
+		   return false;
+        }
+	 	page.modalShow("<b>您的资料已提交</b><br>众品森知识产权顾问稍后联系您");
+	 	document.getElementById("form2").reset();
+	 	$("#form2 .err").hide();
+	 })
+	  $('#phone').on('input', function(e) {
+            var phone = $.trim($('#phone').val());
+		    if (!page.phoneReg.test(phone)) {
+			   $("#form1 .err").show();
+	        }else {
+	        	$("#form1 .err").hide();
+	        }
+        })
+	  	  $('#link').on('input', function(e) {
+            var phone = $.trim($('#link').val());
+		    if (!page.phoneReg.test(phone)) {
+			   $("#form2 .err").show();
+	        }else {
+	        	$("#form2 .err").hide();
+	        }
+        })
 	 var page = {
-	 	modalShow:function () {
+	 	modalShow:function (val) {
 	 		$('.Modal--alert').css('display','flex');
 		 	$('.backdrop').css('opcity','1')
 		 	$('body').addClass('is-alert-open')
-		 	$('	<div class="backdrop" ></div>').insertBefore('.Modal--alert')
+		 	$('	<div class="backdrop" ></div>').insertBefore('.Modal--alert');
+		 	$(".Modal__content").html(val);
 	 	},
 	 	cancle:function (argument) {
 	 		$('.Modal--alert').css('display','none');
 			$('.backdrop').css('opcity','0')
 		 	$('body').removeClass('is-alert-open')
 		 	$('.backdrop').remove();	 		
-	 	}
+	 	},
+	 	phoneReg:/(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/
 	 }
 	</script>
 </body>

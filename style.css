@@ -419,7 +419,7 @@ button:-moz-focusring,
     overflow: hidden;
 }
 .Modal__content {
-    padding: 15px;
+    padding: 30px;
     font-size: 14px;
     max-height: 75vh;
 }
@@ -453,11 +453,25 @@ button:-moz-focusring,
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    height: 45px;
-    line-height: 45px;
+    height: 60px;
+    line-height: 60px;
     font-size: 16px;
 }
 .is-modal-open .l-app, .is-alert-open .l-app {
     -webkit-filter: blur(12px);
     filter: blur(12px);
+}
+.err {
+    display: none;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #f22254;
+}
+.footer {
+    text-align: center;
+    color:#ccc;
+    font-size: 12px;
+    margin-bottom: 10px;
 }
