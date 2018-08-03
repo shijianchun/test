@@ -157,7 +157,7 @@
 	    var phone = $.trim($('#phone').val());
 	     if (!page.phoneReg.test(phone)) {
 		   //page.modalShow("请输入正确的手机号");
-		   $("#form1 .err").show(500);
+		   $("#form1 .err").show();
 		   $("#phone").focus();
 		   return false;
         }
@@ -170,28 +170,28 @@
 	    var link = $.trim($('#link').val());
 	     if (!page.phoneReg.test(link)) {
 		   //page.modalShow("请输入正确的手机号");
-		   $("#form2 .err").show(500);
+		   $("#form2 .err").show();
 		   $("#link").focus();
 		   return false;
         }
 	 	page.modalShow("<b>您的资料已提交</b><br>众品森知识产权顾问稍后联系您");
 	 	document.getElementById("form2").reset();
-	 	$("#form2 .err").hide(500);
+	 	$("#form2 .err").hide();
 	 })
 	  $('#phone').on('input', function(e) {
             var phone = $.trim($('#phone').val());
 		    if (!page.phoneReg.test(phone)) {
-			   $("#form1 .err").show(500);
+			   $("#form1 .err").show();
 	        }else {
-	        	$("#form1 .err").hide(500);
+	        	$("#form1 .err").hide();
 	        }
         })
 	  	  $('#link').on('input', function(e) {
             var phone = $.trim($('#link').val());
 		    if (!page.phoneReg.test(phone)) {
-			   $("#form2 .err").show(500);
+			   $("#form2 .err").show();
 	        }else {
-	        	$("#form2 .err").hide(500);
+	        	$("#form2 .err").hide();
 	        }
         })
 	 var page = {

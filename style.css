@@ -243,8 +243,11 @@ button:-moz-focusring,
     padding-bottom: 5px;
     padding-top: 5px;
 }
-.form form div {
+.form form > div {
     padding: 0 20px;
+}
+.form form  div.flex-it1 {
+    padding-left: 20px;
 }
 
 .bg {
